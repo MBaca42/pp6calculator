@@ -23,19 +23,6 @@ double quadratic1(double a, double b, double c){
 double quadratic2(double a, double b, double c){
   return (-b - sqrt((b * b) - (4*a*c)))/(2*a);
 }
-//============================
-void quadratic(double& a, double& b, double& c, double result1, double result2){
-  if((sqrt((b * b) - (4*a*c))) < 0){
-    std::cout << "Error - imaginary number!" << '\n';
-      std::cin.clear();
-      std::cin.ignore(INT_MAX, '\n');
-  }
-  else{
-    result1 = quadratic1(a,b,c);
-    result2 = quadratic2(a,b,c);
-  }
-}
-//============================
 double threevector(double a, double b, double c){
   return sqrt((a*a) + (b*b) + (c*c));
 }
@@ -46,10 +33,13 @@ double print(double c){ //Prints out the answer to one of the above functions
   std::cout << "The answer is: " << c << '\n';
   return 0;
 }
-void change(int& a, int& b){//Swaps two variables
-  int c = a;
-  a = b;
-  b = c;
+double errortest(){
+	if(!std::cin){
+	  std::cout << "Invalid number." << '\n';
+	  std::cin.clear();
+	  std::cin.ignore(INT_MAX, '\n');
+	}
+	//else break;
 }
 
 int main()
@@ -60,21 +50,19 @@ int main()
   double d;
   double e;
   int input;
-  int i = 1;
-  int j;
-  int k;
 
+  int i = 1;
   while(i < 10){
-    std::cout << "Please enter the number for your selection:" << '\n' << "1 - Addition" << '\n' <<  "2 - Subtraction" << '\n' << "3 - Multiplication" << '\n' << "4 - Division" << '\n' << "5 - x-intercept calculation" << '\n' << "6 - Quadratic calculation" << '\n' << "7 - Vector lengths" << '\n' << "8 - Invariant mass of two particles" << '\n' << "9 - Bubble Sort" << '\n' << "10 - Quit" << '\n';
+    std::cout << "Please enter the number for your selection:" << '\n' << "1 - Addition" << '\n' <<  "2 - Subtraction" << '\n' << "3 - Multiplication" << '\n' << "4 - Division" << '\n' << "5 - x-intercept calculation" << '\n' << "6 - Quadratic calculation" << '\n' << "7 - Vector lengths" << '\n' << "8 - Invariant mass of two particles" << '\n' << "9 - Quit" << '\n';
     std::cin >> input; //User selections which function to use (or to quit)
 
-    if(!std::cin || input >= 11 || input <= 0){ //Returns error if out of range/doesn't make sense
+    if(!std::cin || input >= 10 || input <= 0){ //Returns error if out of range/doesn't make sense
       std::cout << "Invalid input!" << '\n';
       std::cin.clear();
       std::cin.ignore(INT_MAX, '\n');
       continue;
     }
-    if(input == 10){ //Quit option
+    if(input == 9){ //Quit option
       break;
     }
   
@@ -263,35 +251,7 @@ int main()
     if(input == 8){
       std::cout << "Feature coming soon!" << '\n';
     }
-
-    if(input == 9){
-      int arr[4];
-
-      std::cout << "Input first array value: ";
-      std::cin >> arr[0];
-      std::cout << "Input second array value: ";
-      std::cin >> arr[1];
-      std::cout << "Input third array value: ";
-      std::cin >> arr[2];
-      std::cout << "Input fourth array value: ";
-      std::cin >> arr[3];
-
-      bool sorted = false;
-      while(!sorted){
-	bool swapped = false;
-	for(int i = 0; i < 3; i++){
-	  if(arr[i] < arr[i+1]){
-	    change(arr[i],arr[i+1]);
-	    swapped = true;
-	  }	  
-	  std::cout << "Current status: " << arr[0] << ", " << arr[1] << ", " << arr[2] << ", " << arr[3] << '\n';
-	}
-        sorted = !swapped;
-      }
-      std::cout << arr[0] << ", " << arr[1] << ", " << arr[2] << ", " << arr[3] << '\n';
-
-    }
-
+    
   }    
 
   return 0;
