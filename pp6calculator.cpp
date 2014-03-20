@@ -2,7 +2,7 @@
 #include <climits>
 #include <cmath>
 #include "PP6Math.hpp"
-#include "PP6Math.cpp"
+
 
 
 int main()
@@ -246,7 +246,7 @@ int main()
     }
     if(input == 10){
       //FOUR VECTOR BOOST CODE
-      FourVector beforeboost;
+      Four_Vector beforeboost;
       double v;
       std::cout << "Enter x component of four vector: ";
       std::cin >> beforeboost.x;
@@ -259,6 +259,7 @@ int main()
       std::cout << "Enter velocity (in units of c): ";
       std::cin >> v;
       boost_z(beforeboost,v);
+      
     }
 
   }    

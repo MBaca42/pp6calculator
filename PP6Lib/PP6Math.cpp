@@ -1,5 +1,3 @@
-#ifndef PP6CALCULATOR_PP6MATH_HH
-#define PP6CALCULATOR_PP6MATH_HH
 
 #include <iostream>
 #include <climits>
@@ -64,17 +62,19 @@ void change(int& a, int& b){//Swaps two variables
   double t;
 };*/
 
-FourVector boost_z(FourVector beforeboost, double v){
+Four_Vector boost_z(Four_Vector beforeboost, double v){
   //Note - v in units of c
   double c = 3E8;
   double gamma = sqrt(1 - pow(v,2));
-  FourVector afterboost;
+  Four_Vector afterboost;
   afterboost.x = beforeboost.x;
   afterboost.y = beforeboost.y;
   afterboost.z = gamma*(beforeboost.z - v*c*beforeboost.t);
   afterboost.t = (gamma/c)*(c*beforeboost.t - v*beforeboost.z);
 
+std::cout << afterboost.x << '\t' << afterboost.y << '\t' << afterboost.z << '\t' << afterboost.t << std::endl;
+
   return afterboost;
 }
 
-#endif
+
