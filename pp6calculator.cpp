@@ -2,267 +2,43 @@
 #include <climits>
 #include <cmath>
 #include "PP6Math.hpp"
+#include "Day1.hpp"
+#include "Day2.hpp"
+#include "Day3.hpp"
 
-
+int input;
 
 int main()
 {
-  double a;
-  double b;
-  double c;
-  double d;
-  double e;
-  int input;
-  int i = 1;
-  int j;
-  int k;
 
-  while(i < 10){
-    std::cout << "Please enter the number for your selection:" << '\n' << "1 - Addition" << '\n' <<  "2 - Subtraction" << '\n' << "3 - Multiplication" << '\n' << "4 - Division" << '\n' << "5 - x-intercept calculation" << '\n' << "6 - Quadratic calculation" << '\n' << "7 - Vector lengths" << '\n' << "8 - Invariant mass of two particles" << '\n' << "9 - Bubble Sort" << '\n' << "10 - Four Vector Boosting" << '\n' << "11 - Quit" << '\n';
-    std::cin >> input; //User selections which function to use (or to quit)
+  while(true){
 
-    if(!std::cin || input >= 12 || input <= 0){ //Returns error if out of range/doesn't make sense
-      std::cout << "Invalid input!" << '\n';
+    std::cout << "Please select a Day (1-3) to access the relevant sub-menu (or 0 to quit): ";
+    std::cin >> input;
+
+    if(input == 1) Day1();
+
+    if(input == 2) Day2();
+
+    if(input == 3) Day3();
+
+    if(input == 0){
+      break;
+    }
+    
+    if(!std::cin || input > 3){
+      std::cout << "Error in input!" << std::endl;
       std::cin.clear();
       std::cin.ignore(INT_MAX, '\n');
       continue;
     }
-    if(input == 11){ //Quit option
-      break;
-    }
-  
 
-    if(input >= 1 && input <= 4){
-      while( 1==1){
-	std::cout << "Enter value for a: "; //User defined values for a and b
-	std::cin >> a;
-	if(!std::cin){
-	  std::cout << "Invalid number." << '\n';
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-      while( 1==1){
-	std::cout << "Enter value for b: ";
-	std::cin >>b;
-	if(!std::cin){
-	  std::cout << "Invalid number." << '\n';
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-    }
-  
+  }
 
-    if(input == 1) print( addition(a,b) ); //Calls the above functions based on user input choice
-    if(input == 2) print( subtraction(a,b) );
-    if(input == 3) print( multiply(a,b) );
-    if(input == 4) print( division(a,b) );
-    if(input == 5){
-      while(1==1){
-      std::cout << "For a straight line modelled by y = mx+c, please enter m (the gradient): ";
-      std::cin >> a;
-        if(!std::cin){
-	  std::cout << "Invalid number!" << '\n';
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-        }
-	else break;
-      }
-      while(1==1){
-      std::cout << "Now enter c (y-intercept): ";
-      std::cin >> b;
-        if(!std::cin){
-	  std::cout << "Invalid number!" << '\n';
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-        }
-	else break;
-      }
 
-      print( xintercept(a,b) );
-    }
 
-    if(input == 6){
-      while(1==1){
-      std::cout << "For a quadratic modelled by y= ax^2 + bx + c, please enter a: ";
-      std::cin >> a;
-        if(!std::cin){
-	  std::cout << "Invalid number!" << '\n';
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-        }
-	else break;
-      }
-      while(1==1){
-      std::cout << "And b: ";
-      std::cin >> b;
-        if(!std::cin){
-	  std::cout << "Invalid number!" << '\n';
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-        }
-	else break;
-      }
-      while(1==1){
-      std::cout << "And finally, c: ";
-      std::cin >> c;
-        if(!std::cin){
-	  std::cout << "Invalid number!" << '\n';
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-        }
-	else break;
-      }
-      print( quadratic1(a,b,c) );
-      std::cout << "And" << '\n';
-      print( quadratic2(a,b,c) );
-      d = quadratic1(a,b,c);
-      if(d != d){
-	std::cout << "Your values lead to an imaginary answer (4*a*c was greater than b^2)!" << '\n';
-      }
-    }
 
-    if(input == 7){
-      std::cout << "Are you using a 3 vector or a 4 vector? (Enter 3 or 4 respectively): ";
-      while(1 == 1){
-	std::cin >> e;
-	if(!std::cin || e <=2 || e >= 5){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-      if(e == 3){
-	while(1==1){
-	std::cout << "Please enter the first element in the vector: ";
-	std::cin >> a;
-	if(!std::cin || e <=2 || e >= 5){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-      while(1==1){
-	std::cout << "Please enter the second element in the vector: ";
-	std::cin >> b;
-	if(!std::cin || e <=2 || e >= 5){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-    while(1==1){
-        std::cout << "Please enter the third element in the vector: ";
-	std::cin >> c;
-	if(!std::cin || e <=2 || e >= 5){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-	print( threevector(a,b,c) );
-      }
-      if(e == 4){
-	while(1==1){
-	std::cout << "Please enter the first element in the vector: ";
-	std::cin >> a;
-	if(!std::cin || e <=2 || e >= 5){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-      while(1==1){
-	std::cout << "Please enter the second element in the vector: ";
-	std::cin >> b;
-	if(!std::cin || e <=2 || e >= 5){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-    while(1==1){
-        std::cout << "Please enter the third element in the vector: ";
-	std::cin >> c;
-	if(!std::cin || e <=2 || e >= 5){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-      }
-    while(1==1){
-	std::cout << "Please enter the fourth element in the vector: ";
-	std::cin >> d;
-	if(!std::cin){
-	  std::cout << "Invalid vector size! Please re-enter: ";
-	  std::cin.clear();
-	  std::cin.ignore(INT_MAX, '\n');
-	}
-	else break;
-    }
-	print( fourvector(a,b,c,d) );
-    }
-    }
-    if(input == 8){
-      std::cout << "Feature coming soon!" << '\n';
-    }
-
-    if(input == 9){
-      int arr[4];
-
-      std::cout << "Input first array value: ";
-      std::cin >> arr[0];
-      std::cout << "Input second array value: ";
-      std::cin >> arr[1];
-      std::cout << "Input third array value: ";
-      std::cin >> arr[2];
-      std::cout << "Input fourth array value: ";
-      std::cin >> arr[3];
-
-      bool sorted = false;
-      while(!sorted){
-	bool swapped = false;
-	for(int i = 0; i < 3; i++){
-	  if(arr[i] < arr[i+1]){
-	    change(arr[i],arr[i+1]);
-	    swapped = true;
-	  }	  
-	  std::cout << "Current status: " << arr[0] << ", " << arr[1] << ", " << arr[2] << ", " << arr[3] << '\n';
-	}
-        sorted = !swapped;
-      }
-      std::cout << arr[0] << ", " << arr[1] << ", " << arr[2] << ", " << arr[3] << '\n';
-
-    }
-    if(input == 10){
-      //FOUR VECTOR BOOST CODE
-      Four_Vector beforeboost;
-      double v;
-      std::cout << "Enter x component of four vector: ";
-      std::cin >> beforeboost.x;
-      std::cout << "Enter y component of four vector: ";
-      std::cin >> beforeboost.y;
-      std::cout << "Enter z component of four vector: ";
-      std::cin >> beforeboost.z;
-      std::cout << "Enter t component of four vector: ";
-      std::cin >> beforeboost.t;
-      std::cout << "Enter velocity (in units of c): ";
-      std::cin >> v;
-      boost_z(beforeboost,v);
-      
-    }
-
-  }    
+    
 
   return 0;
 }
