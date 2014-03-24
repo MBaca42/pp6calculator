@@ -2,6 +2,7 @@
 #include <iostream>
 #include <climits>
 #include <cmath>
+#include <cstdlib>
 #include "PP6Math.hpp"
 
 
@@ -55,12 +56,18 @@ void change(int& a, int& b){//Swaps two variables
   b = c;
 }
 
-/*struct FourVector{
-  double x;
-  double y;
-  double z;
-  double t;
-};*/
+double randomvector(){
+
+  int ranvect[4];
+  ranvect[1] = rand()%100;
+  ranvect[2] = rand()%100;
+  ranvect[3] = rand()%100;
+  int mass = rand()%100;
+  ranvect[0] = 0; //HERE WILL WORK OUT THE ENERGY
+  std::cout << ranvect[0] << '\t' << ranvect[1] << '\t' << ranvect[2] << '\t' << ranvect[3] << '\n';
+
+}
+
 
 Four_Vector boost_z(Four_Vector beforeboost, double v){
   //Note - v in units of c

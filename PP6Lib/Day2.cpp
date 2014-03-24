@@ -12,10 +12,10 @@ void Day2(){
   int input2;
 
   while(true){
-    std::cout << "Please enter the number for your selection:" << '\n' << "1 - Bubble Sort" << '\n' <<  "0 - Quit" << '\n';
+    std::cout << "Please enter the number for your selection:" << '\n' << "1 - Bubble Sort" << '\n' <<  "2 - Random Energy &Momenta Generator" << '\n' << "0 - Quit" << '\n';
     std::cin >> input2; //User selections which function to use (or to quit)
 
-    if(!std::cin || input2 >= 2 || input2 < 0){ //Returns error if out of range/doesn't make sense
+    if(!std::cin || input2 >= 3 || input2 < 0){ //Returns error if out of range/doesn't make sense
       std::cout << "Invalid input!" << '\n';
       std::cin.clear();
       std::cin.ignore(INT_MAX, '\n');
@@ -51,6 +51,13 @@ void Day2(){
       }
       std::cout << arr[0] << ", " << arr[1] << ", " << arr[2] << ", " << arr[3] << '\n';
 
+    }
+
+    if(input2 == 2){
+      for(int i = 0; i <= 99; i++){
+	std::cout << i << '\t';
+	randomvector();
+      }
     }
   }
 

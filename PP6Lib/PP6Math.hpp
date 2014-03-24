@@ -21,6 +21,7 @@ double threevector(double a, double b, double c);
 double fourvector(double a, double b, double c, double d);
 double print(double c);
 void change(int& a, int& b);
+double randomvector();
 Four_Vector boost_z(Four_Vector beforeboost, double v);
 //struct FourVector(double, double, double, double);
 
