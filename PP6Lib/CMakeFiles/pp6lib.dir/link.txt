@@ -1,0 +1,2 @@
+/bin/ar cr libpp6lib.a  CMakeFiles/pp6lib.dir/PP6Math.cpp.o CMakeFiles/pp6lib.dir/Day1.cpp.o CMakeFiles/pp6lib.dir/Day2.cpp.o CMakeFiles/pp6lib.dir/Day3.cpp.o
+/bin/ranlib libpp6lib.a

@@ -1,3 +1,5 @@
+#ifndef PP6CALCULATOR_PP6MATH_HH
+#define PP6CALCULATOR_PP6MATH_HH
 
 #include <iostream>
 #include <climits>
@@ -34,8 +36,8 @@ void quadratic(double& a, double& b, double& c, double result1, double result2){
       std::cin.ignore(INT_MAX, '\n');
   }
   else{
-    double result1 = quadratic1(a,b,c);
-    double result2 = quadratic2(a,b,c);
+    result1 = quadratic1(a,b,c);
+    result2 = quadratic2(a,b,c);
   }
 }
 //============================
@@ -55,26 +57,24 @@ void change(int& a, int& b){//Swaps two variables
   b = c;
 }
 
-/*struct FourVector{
+struct FourVector{
   double x;
   double y;
   double z;
   double t;
-};*/
+};
 
-Four_Vector boost_z(Four_Vector beforeboost, double v){
+FourVector boost_z(FourVector beforeboost, double v){
   //Note - v in units of c
   double c = 3E8;
   double gamma = sqrt(1 - pow(v,2));
-  Four_Vector afterboost;
+  FourVector afterboost;
   afterboost.x = beforeboost.x;
   afterboost.y = beforeboost.y;
   afterboost.z = gamma*(beforeboost.z - v*c*beforeboost.t);
   afterboost.t = (gamma/c)*(c*beforeboost.t - v*beforeboost.z);
 
-std::cout << afterboost.x << '\t' << afterboost.y << '\t' << afterboost.z << '\t' << afterboost.t << std::endl;
-
   return afterboost;
 }
 
-
+#endif

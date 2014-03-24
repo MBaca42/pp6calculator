@@ -1,0 +1,11 @@
+//Day Menu header
+#ifndef PP6CALCULATOR_DAYMENUHEADER_HH
+#define PP6CALCULATOR_DAYMENUHEADER_HH
+
+
+void Day1();
+void Day2();
+void Day3();
+
+#endif // PP6CALCULATOR_DAYMENUHEADER_HH
+

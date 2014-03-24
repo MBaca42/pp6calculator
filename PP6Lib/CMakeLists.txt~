@@ -1,0 +1,1 @@
+add_library(pp6lib STATIC PP6Lib/PP6Math.hpp PP6Lib/Day1.hpp PP6Lib/Day2.hpp PP6Lib/Day3.hpp PP6Lib/DayMenuHeader.hpp PP6Lib/PP6Math.cpp PP6Lib/Day1.cpp PP6Lib/Day2.cpp PP6Lib/Day3.cpp)
