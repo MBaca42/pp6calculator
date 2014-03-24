@@ -1,31 +1,32 @@
 
-#include "Day1.hpp"
+//#include "Day1.hpp"
 #include <iostream>
 #include <climits>
 #include <cmath>
 #include "PP6Math.hpp"
+#include "DayMenuHeader.hpp"
 
 
 void Day1(){
 
-
+  int input1;
 
   while(true){
     std::cout << "Please enter the number for your selection:" << '\n' << "1 - Addition" << '\n' <<  "2 - Subtraction" << '\n' << "3 - Multiplication" << '\n' << "4 - Division" << '\n' << "5 - x-intercept calculation" << '\n' << "6 - Quadratic calculation" << '\n' << "7 - Vector lengths" << '\n' << "8 - Invariant mass of two particles" << '\n' << "0 - Quit" << '\n';
-    std::cin >> input; //User selections which function to use (or to quit)
+    std::cin >> input1; //User selections which function to use (or to quit)
 
-    if(!std::cin || input >= 9 || input < 0){ //Returns error if out of range/doesn't make sense
+    if(!std::cin || input1 >= 9 || input1 < 0){ //Returns error if out of range/doesn't make sense
       std::cout << "Invalid input!" << '\n';
       std::cin.clear();
       std::cin.ignore(INT_MAX, '\n');
       continue;
     }
-    if(input == 0){ //Quit option
+    if(input1 == 0){ //Quit option
       break;
     }
   
 
-    if(input >= 1 && input <= 4){
+    if(input1 >= 1 && input1 <= 4){
       while( true){
 	std::cout << "Enter value for a: "; //User defined values for a and b
 	std::cin >> a;
@@ -49,11 +50,11 @@ void Day1(){
     }
   
 
-    if(input == 1) print( addition(a,b) ); //Calls the above functions based on user input choice
-    if(input == 2) print( subtraction(a,b) );
-    if(input == 3) print( multiply(a,b) );
-    if(input == 4) print( division(a,b) );
-    if(input == 5){
+    if(input1 == 1) print( addition(a,b) ); //Calls the above functions based on user input choice
+    if(input1 == 2) print( subtraction(a,b) );
+    if(input1 == 3) print( multiply(a,b) );
+    if(input1 == 4) print( division(a,b) );
+    if(input1 == 5){
       while(true){
       std::cout << "For a straight line modelled by y = mx+c, please enter m (the gradient): ";
       std::cin >> a;
@@ -78,7 +79,7 @@ void Day1(){
       print( xintercept(a,b) );
     }
 
-    if(input == 6){
+    if(input1 == 6){
       while(true){
       std::cout << "For a quadratic modelled by y= ax^2 + bx + c, please enter a: ";
       std::cin >> a;
@@ -118,7 +119,7 @@ void Day1(){
       }
     }
 
-    if(input == 7){
+    if(input1 == 7){
       std::cout << "Are you using a 3 vector or a 4 vector? (Enter 3 or 4 respectively): ";
       while(true){
 	std::cin >> e;
@@ -206,7 +207,7 @@ void Day1(){
 	print( fourvector(a,b,c,d) );
     }
     }
-    if(input == 8){
+    if(input1 == 8){
       std::cout << "Feature coming soon!" << '\n';
     }
 

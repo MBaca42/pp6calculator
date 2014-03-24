@@ -8,6 +8,7 @@ struct Four_Vector{
   double t;
 };
 
+
 double addition(double a, double b);
 double subtraction(double a, double b);
 double multiply(double a, double b);
