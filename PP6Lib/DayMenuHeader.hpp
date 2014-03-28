@@ -9,7 +9,7 @@
   double e;
   int j;
   int k;
-
+int ranvect[4];
 
 #endif // PP6CALCULATOR_DAYMENUHEADER_HH
 

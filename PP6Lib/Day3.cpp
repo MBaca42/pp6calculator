@@ -6,6 +6,20 @@
 #include "PP6Math.hpp"
 //#include "DayMenuHeader.hpp"
 
+FourVectorType getFourVectorType(Four_Vector beforeboost){
+  /*if(!beforeboost){
+    return UNDEFINED_TYPE;
+    }*/
+  if(fourvector(beforeboost.x, beforeboost.y, beforeboost.z, beforeboost.t) < 0){
+    return TIMELIKE;
+  }
+  if(fourvector(beforeboost.x, beforeboost.y, beforeboost.z, beforeboost.t) == 0){
+    return LIGHTLIKE;
+  }
+  if(fourvector(beforeboost.x, beforeboost.y, beforeboost.z, beforeboost.t) > 0){
+    return SPACELIKE;
+  }
+}
 
 void Day3(){
 

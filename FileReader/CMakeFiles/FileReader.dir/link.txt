@@ -1,0 +1,2 @@
+/bin/ar cr libFileReader.a  CMakeFiles/FileReader.dir/FileReader.cpp.o
+/bin/ranlib libFileReader.a

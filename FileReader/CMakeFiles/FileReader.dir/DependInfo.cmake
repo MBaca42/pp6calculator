@@ -4,10 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/Day1.cpp" "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/CMakeFiles/pp6lib.dir/Day1.cpp.o"
-  "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/Day2.cpp" "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/CMakeFiles/pp6lib.dir/Day2.cpp.o"
-  "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/Day3.cpp" "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/CMakeFiles/pp6lib.dir/Day3.cpp.o"
-  "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/PP6Math.cpp" "/home/mjb/mpagspp6/pp6calculator.git/PP6Lib/CMakeFiles/pp6lib.dir/PP6Math.cpp.o"
+  "/home/mjb/mpagspp6/pp6calculator.git/FileReader/FileReader.cpp" "/home/mjb/mpagspp6/pp6calculator.git/FileReader/CMakeFiles/FileReader.dir/FileReader.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

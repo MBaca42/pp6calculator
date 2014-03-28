@@ -1,6 +1,7 @@
 #ifndef PP6CALCULATOR_DAY2_HH
 #define PP6CALCULATOR_DAY2_HH
 
+
 void Day2();
 
 #endif // PP6CALCULATOR_DAY2_HH

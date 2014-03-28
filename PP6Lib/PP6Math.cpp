@@ -57,7 +57,6 @@ void change(int& a, int& b){//Swaps two variables
 }
 
 double randomvector(){
-
   int ranvect[4];
   ranvect[1] = rand()%100;
   ranvect[2] = rand()%100;
@@ -65,6 +64,7 @@ double randomvector(){
   int mass = rand()%100;
   ranvect[0] = 0; //HERE WILL WORK OUT THE ENERGY
   std::cout << ranvect[0] << '\t' << ranvect[1] << '\t' << ranvect[2] << '\t' << ranvect[3] << '\n';
+
 
 }
 
