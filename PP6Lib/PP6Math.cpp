@@ -69,7 +69,7 @@ double randomvector(){
 }
 
 
-Four_Vector boost_z(Four_Vector beforeboost, double v){
+Four_Vector Four_Vector::boost_z(Four_Vector beforeboost, double v){
   //Note - v in units of c
   double c = 3E8;
   double gamma = sqrt(1 - pow(v,2));

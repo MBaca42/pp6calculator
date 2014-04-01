@@ -53,7 +53,7 @@ void Day3(){
       std::cin >> beforeboost.t;
       std::cout << "Enter velocity (in units of c): ";
       std::cin >> v;
-      boost_z(beforeboost,v);
+      Four_Vector::boost_z(beforeboost, v);
       
     }
 

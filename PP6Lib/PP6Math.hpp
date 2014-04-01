@@ -2,12 +2,15 @@
 #ifndef PP6CALCULATOR_PP6MATH_HH
 #define PP6CALCULATOR_PP6MATH_HH
 
-struct Four_Vector{
+class Four_Vector{
+ public:
+  static Four_Vector boost_z(Four_Vector beforeboost, double v);
   double x;
   double y;
   double z;
   double t;
 };
+
 enum FourVectorType{
   UNDEFINED_TYPE,
   TIMELIKE,
@@ -29,7 +32,7 @@ double fourvector(double a, double b, double c, double d);
 double print(double c);
 void change(int& a, int& b);
 double randomvector();
-Four_Vector boost_z(Four_Vector beforeboost, double v);
+//Four_Vector boost_z(Four_Vector beforeboost, double v);
 
 
 
