@@ -4,6 +4,10 @@
 
 class Four_Vector{
  public:
+  //ctors
+  Four_Vector() {x = 0; y = 0; z = 0; t = 0; }
+  Four_Vector(const double x_, const double y_, const double z_, const double t_);
+
   static Four_Vector boost_z(Four_Vector beforeboost, double v);
   double x;
   double y;
